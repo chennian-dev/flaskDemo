@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}</title>
+  <title>Admin Dashboard</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -12,14 +12,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        {% if 'username' in session %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-        </li>
-        {% else %}
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('login') }}">Login</a>
         </li>
@@ -32,12 +24,16 @@
         <!--<li class="nav-item">-->
           <!--<a class="nav-link" href="{{ url_for('transfer') }}">Transfer</a>-->
         <!--</li>-->
-        {% endif %}
       </ul>
     </div>
   </nav>
 
-  {% block content %}{% endblock %}
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to the API Recognize TEST</h1>
+      <p class="lead">This is a simple example of an dashboard using Flask and Bootstrap.</p>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

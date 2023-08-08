@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2 class="text-center mb-4">Welcome</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>key</th>
+            <th>value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.key }}</td>
+            <td>{{ user.value }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="text-center">
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+  </div>
+</div>
+{% endblock %}
